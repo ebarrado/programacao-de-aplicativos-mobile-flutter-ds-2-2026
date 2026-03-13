@@ -204,7 +204,7 @@ Ele permite que o usuário **selecione uma opção entre várias disponíveis** 
 
 ---
 
-# 📌 Diferença entre DropdownButton e DropdownButtonFormField
+## Diferença entre DropdownButton e DropdownButtonFormField
 
 | Widget | Uso |
 |---|---|
@@ -215,7 +215,7 @@ Se estiver dentro de um **Form**, o ideal é usar **DropdownButtonFormField**.
 
 ---
 
-# 📐 Estrutura básica
+## Estrutura básica
 
 ```dart
 DropdownButtonFormField(
