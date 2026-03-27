@@ -1,4 +1,6 @@
-import 'package:app_ecotrack_3_a/services/auth_service.dart';
+import 'package:app_ecotrack_3_a/screens/register_screen.dart';
+
+import '/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 //com comandos para facilitar
@@ -62,6 +64,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   prefixIcon: Icon(Icons.email),
                   border: OutlineInputBorder(),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Digite seu e-mail";
+                  }
+                  if (!value.contains("@") || !value.contains(".")) {
+                    return "E-mail Inválido";
+                  }
+                  return null;
+                },
               ),
               SizedBox(height: 50),
               TextFormField(
@@ -73,22 +84,27 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: OutlineInputBorder(),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty){
+                  if (value == null || value.isEmpty) {
                     return "Digite sua senha";
                   }
-                  if (value.length < 6){
+                  if (value.length < 6) {
                     return "Senha deve ter no mínimo 6 caracteres";
                   }
                   return null;
                 },
-
               ),
               SizedBox(height: 50),
               SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RegisterScreen()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     foregroundColor: Colors.white,
@@ -149,11 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         ScaffoldMessenger.of(
           context,
-          ).showSnackBar(
-            SnackBar(
-              content: Text(
-                "Login Realizado com Sucesso"
-                )));
+        ).showSnackBar(SnackBar(content: Text("Login Realizado com Sucesso")));
       }
     }
   }
