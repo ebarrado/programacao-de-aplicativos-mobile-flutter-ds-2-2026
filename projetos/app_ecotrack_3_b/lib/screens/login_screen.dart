@@ -1,3 +1,5 @@
+import 'package:app_ecotrack_3_b/screens/home_screen.dart';
+import 'package:app_ecotrack_3_b/screens/register_screen.dart';
 import 'package:app_ecotrack_3_b/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController senhaController = TextEditingController();
   bool ocultarSenha = true;
   final AuthService authService = AuthService();
-
 
   @override
   Widget build(BuildContext context) {
@@ -74,20 +75,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 validator: (value) {
-                  if(value == null || value.isEmpty){
+                  if (value == null || value.isEmpty) {
                     return "Digite seu E-mail";
                   }
-                  if(!value.contains("@") || !value.contains(".")){
+                  if (!value.contains("@") || !value.contains(".")) {
                     return "E-mail Inválido";
                   }
                   return null;
-                } ,
+                },
               ),
               SizedBox(height: 16),
               TextFormField(
                 controller: senhaController,
                 obscureText: true,
-                decoration: InputDecoration(                  
+                decoration: InputDecoration(
                   labelText: 'Password',
                   prefix: Icon(Icons.lock),
                   border: OutlineInputBorder(
@@ -105,11 +106,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                validator: (value){
-                  if (value == null || value.isEmpty){
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
                     return "Digite sua senha";
                   }
-                  if (value.length < 6){
+                  if (value.length < 6) {
                     return "Senha deve ter no mínimo 6 caracteres";
                   }
                   return null;
@@ -119,13 +120,18 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 50,
                 width: double.infinity,
-                child: ElevatedButton(                  
-                  style: ButtonStyle(                    
+                child: ElevatedButton(
+                  style: ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll<Color>(
                       Colors.green,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterScreen()),
+                    );
+                  },
                   child: Text(
                     "Criar Conta",
                     style: TextStyle(
@@ -149,6 +155,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
                     validarLogin();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
                   },
                   child: Text(
                     "Entrar",
@@ -167,31 +177,22 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   //função para validar login
-  void validarLogin(){
-    if (_formkey.currentState!.validate()){
+  void validarLogin() {
+    if (_formkey.currentState!.validate()) {
       String email = emailController.text;
       String senha = senhaController.text;
 
       String? resultado = authService.login(email, senha);
 
-      if (resultado != null){
+      if (resultado != null) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(resultado)));
+      } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              resultado
-            )
-            )
-          );
-      }else{
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              "Login Realizado com Sucesso!!!"
-            )
-            )
-          
-
+          SnackBar(content: Text("Login Realizado com Sucesso!!!")),
         );
       }
     }
