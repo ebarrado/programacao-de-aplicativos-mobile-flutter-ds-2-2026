@@ -1,3 +1,4 @@
+import 'package:app_ecotrack_3_a/screens/home_screen.dart';
 import 'package:app_ecotrack_3_a/screens/register_screen.dart';
 
 import '/services/auth_service.dart';
@@ -132,6 +133,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     //print("Relizar Login");
                     validarLogin();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeScreen()),
+                    );
                   },
                   child: Text(
                     "Entrar",
