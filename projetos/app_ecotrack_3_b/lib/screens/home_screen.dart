@@ -1,8 +1,5 @@
-import 'package:app_ecotrack_3_a/widgets/acao_rapida_card.dart';
-import 'package:app_ecotrack_3_a/widgets/atividade_item.card.dart';
-import 'package:app_ecotrack_3_a/widgets/resumo_card.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
