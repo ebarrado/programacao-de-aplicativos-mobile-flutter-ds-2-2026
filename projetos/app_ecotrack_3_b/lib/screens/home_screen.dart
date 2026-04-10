@@ -1,4 +1,9 @@
+import 'package:app_ecotrack_3_b/widgets/acao_rapida_card.dart';
+import 'package:app_ecotrack_3_b/widgets/atividade_item_card.dart';
+import 'package:app_ecotrack_3_b/widgets/resumo_card.dart';
 import 'package:flutter/material.dart';
+
+
 
 
 class HomeScreen extends StatefulWidget {
@@ -15,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final String dataAtual =
-        DateFormat("dd/MM/yyyy").format(DateTime.now());
+    final String dataAtual = "10/04/2026";
+    //DateFormat("dd/MM/yyyy").format(DateTime.now());
 
     return Scaffold(
       backgroundColor: const Color(0xFFF3EEF4),
