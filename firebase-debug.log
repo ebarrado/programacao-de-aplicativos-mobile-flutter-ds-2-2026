@@ -1,0 +1,101 @@
+[debug] [2026-04-10T17:25:36.171Z] ----------------------------------------------------------------------
+[debug] [2026-04-10T17:25:36.175Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\erika\AppData\Local\npm-cache\_npx\ba4f1959e38407b5\node_modules\firebase-tools\lib\bin\firebase.js init dataconnect --project demo-no-project
+[debug] [2026-04-10T17:25:36.176Z] CLI Version:   15.14.0
+[debug] [2026-04-10T17:25:36.176Z] Platform:      win32
+[debug] [2026-04-10T17:25:36.176Z] Node Version:  v22.13.1
+[debug] [2026-04-10T17:25:36.176Z] Time:          Fri Apr 10 2026 14:25:36 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2026-04-10T17:25:36.177Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\erika\OneDrive - SESISENAISP - Corporativo\Área de Trabalho\programacao-de-aplicativos-mobile-flutter-ds-2-2026
+
+[debug] [2026-04-10T17:26:10.362Z] ----------------------------------------------------------------------
+[debug] [2026-04-10T17:26:10.364Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\erika\AppData\Local\npm-cache\_npx\ba4f1959e38407b5\node_modules\firebase-tools\lib\bin\firebase.js init dataconnect --project ecotrackturmaa
+[debug] [2026-04-10T17:26:10.364Z] CLI Version:   15.14.0
+[debug] [2026-04-10T17:26:10.364Z] Platform:      win32
+[debug] [2026-04-10T17:26:10.364Z] Node Version:  v22.13.1
+[debug] [2026-04-10T17:26:10.365Z] Time:          Fri Apr 10 2026 14:26:10 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2026-04-10T17:26:10.365Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\erika\OneDrive - SESISENAISP - Corporativo\Área de Trabalho\programacao-de-aplicativos-mobile-flutter-ds-2-2026
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-04-10T17:34:17.971Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-10T17:34:17.971Z] > authorizing via signed-in user (erikabarrado@gmail.com)
+[debug] [2026-04-10T17:34:17.973Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:17.973Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:17.975Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecotrackturmaa [none]
+[debug] [2026-04-10T17:34:18.786Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecotrackturmaa 200
+[debug] [2026-04-10T17:34:18.786Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecotrackturmaa {"projectId":"ecotrackturmaa","projectNumber":"535836066275","displayName":"ecotrackturmaa","name":"projects/ecotrackturmaa","resources":{"hostingSite":"ecotrackturmaa"},"state":"ACTIVE","etag":"1_2039390e-869a-4b7c-8834-56ac85e874a3"}
+[info] i  Using project ecotrackturmaa (ecotrackturmaa) . 
+[info] 
+=== Dataconnect Setup
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[debug] [2026-04-10T17:34:18.808Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:18.808Z] Checked if tokens are valid: true, expires at: 1775844198749
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2026-04-10T17:34:18.810Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:18.810Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:18.811Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-04-10T17:34:18.811Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com  x-goog-user-project=ecotrackturmaa
+[debug] [2026-04-10T17:34:18.817Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com [none]
+[debug] [2026-04-10T17:34:18.817Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com  x-goog-user-project=ecotrackturmaa
+[debug] [2026-04-10T17:34:20.324Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com 200
+[debug] [2026-04-10T17:34:20.324Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API sqladmin.googleapis.com. Enabling now... 
+[debug] [2026-04-10T17:34:20.325Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:20.325Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:20.326Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com:enable [none]
+[debug] [2026-04-10T17:34:20.326Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com:enable  x-goog-user-project=ecotrackturmaa
+[debug] [2026-04-10T17:34:20.406Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-04-10T17:34:20.406Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com [omitted]
+[warn] !  dataconnect: missing required API firebasedataconnect.googleapis.com. Enabling now... 
+[debug] [2026-04-10T17:34:20.407Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:20.407Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:20.407Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com:enable [none]
+[debug] [2026-04-10T17:34:20.407Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com:enable  x-goog-user-project=ecotrackturmaa
+[debug] [2026-04-10T17:34:21.132Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com:enable 200
+[debug] [2026-04-10T17:34:21.132Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/sqladmin.googleapis.com:enable [omitted]
+[debug] [2026-04-10T17:34:21.149Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com:enable 200
+[debug] [2026-04-10T17:34:21.149Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/firebasedataconnect.googleapis.com:enable [omitted]
+[debug] [2026-04-10T17:34:31.162Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:31.163Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:34:31.163Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/ecotrackturmaa/locations/-/services [none]
+[debug] [2026-04-10T17:34:32.697Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/ecotrackturmaa/locations/-/services 200
+[debug] [2026-04-10T17:34:32.697Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/ecotrackturmaa/locations/-/services {}
+[info] i  : ensuring required API cloudaicompanion.googleapis.com is enabled... 
+[debug] [2026-04-10T17:37:18.900Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:37:18.900Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:37:18.900Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com [none]
+[debug] [2026-04-10T17:37:18.900Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com  x-goog-user-project=ecotrackturmaa
+[debug] [2026-04-10T17:37:20.020Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com 200
+[debug] [2026-04-10T17:37:20.020Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com [omitted]
+[warn] !  : missing required API cloudaicompanion.googleapis.com. Enabling now... 
+[debug] [2026-04-10T17:37:20.021Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:37:20.021Z] Checked if tokens are valid: true, expires at: 1775844198749
+[debug] [2026-04-10T17:37:20.021Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com:enable [none]
+[debug] [2026-04-10T17:37:20.022Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com:enable  x-goog-user-project=ecotrackturmaa
+[debug] [2026-04-10T17:37:21.252Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com:enable 200
+[debug] [2026-04-10T17:37:21.252Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ecotrackturmaa/services/cloudaicompanion.googleapis.com:enable [omitted]

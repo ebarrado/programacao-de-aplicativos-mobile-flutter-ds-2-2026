@@ -17,6 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController telefoneController = TextEditingController();
   final TextEditingController senhaController = TextEditingController();
   final TextEditingController confirmarSenhaController = TextEditingController();
+  final TextEditingController tipoUsuario = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +100,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     border: OutlineInputBorder()
                   ),
                 ),
+
+                SizedBox(height: 20),
+                  TextFormField(
+                  controller: tipoUsuario,
+                  decoration: InputDecoration(
+                    labelText: "Tipo",
+                    prefixIcon: Icon(Icons.usb_rounded),
+                    border: OutlineInputBorder()
+                  ),),
 
                 SizedBox(height: 20),
 
