@@ -1,4 +1,8 @@
+// lib/screens/register_screen.dart
+
 import 'package:flutter/material.dart';
+import '../services/auth_service.dart';
+import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -8,189 +12,138 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final nomeController = TextEditingController();
+  final emailController = TextEditingController();
+  final senhaController = TextEditingController();
+  final turmaController = TextEditingController();
 
-  final _formKey = GlobalKey<FormState>();
+  String tipo = 'aluno';
 
-  final TextEditingController nomeController = TextEditingController();
-  final TextEditingController sobrenomeController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController telefoneController = TextEditingController();
-  final TextEditingController senhaController = TextEditingController();
-  final TextEditingController confirmarSenhaController = TextEditingController();
-  final TextEditingController tipoUsuario = TextEditingController();
+  bool loading = false;
+
+  final AuthService _authService = AuthService();
+
+  Future<void> registrar() async {
+    setState(() {
+      loading = true;
+    });
+
+    final erro = await _authService.registrar(
+      nome: nomeController.text.trim(),
+      email: emailController.text.trim(),
+      senha: senhaController.text.trim(),
+      tipo: tipo,
+      turma: turmaController.text.trim(),
+    );
+
+    setState(() {
+      loading = false;
+    });
+
+    if (erro != null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(erro)),
+      );
+      return;
+    }
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const LoginScreen(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
+      backgroundColor: const Color(0xFFF3EEF4),
       appBar: AppBar(
-        title: Text("Criar Conta"),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color(0xFF4CAF50),
+        title: const Text(
+          'Cadastro',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
-
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-
-          child: Form(
-            key: _formKey,
-
-            child: Column(
-              children: [
-
-                TextFormField(
-                  controller: nomeController,
-                  decoration: InputDecoration(
-                    labelText: "Nome",
-                    prefixIcon: Icon(Icons.person),
-                    border: OutlineInputBorder()
-                  ),
-
-                  validator: (value){
-                    if(value == null || value.isEmpty){
-                      return "Digite seu nome";
-                    }
-                    return null;
-                  },
-                ),
-
-                SizedBox(height: 20),
-
-                TextFormField(
-                  controller: sobrenomeController,
-                  decoration: InputDecoration(
-                    labelText: "Sobrenome",
-                    prefixIcon: Icon(Icons.person_outline),
-                    border: OutlineInputBorder()
-                  ),
-                ),
-
-                SizedBox(height: 20),
-
-                TextFormField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                    labelText: "E-mail",
-                    prefixIcon: Icon(Icons.email),
-                    border: OutlineInputBorder()
-                  ),
-
-                  validator: (value){
-
-                    if(value == null || value.isEmpty){
-                      return "Digite seu e-mail";
-                    }
-
-                    if(!RegExp(r'\S+@\S+\.\S+').hasMatch(value)){
-                      return "Digite um e-mail válido";
-                    }
-
-                    return null;
-                  },
-                ),
-
-                SizedBox(height: 20),
-
-                TextFormField(
-                  controller: telefoneController,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    labelText: "Telefone",
-                    prefixIcon: Icon(Icons.phone),
-                    border: OutlineInputBorder()
-                  ),
-                ),
-
-                SizedBox(height: 20),
-                  TextFormField(
-                  controller: tipoUsuario,
-                  decoration: InputDecoration(
-                    labelText: "Tipo",
-                    prefixIcon: Icon(Icons.usb_rounded),
-                    border: OutlineInputBorder()
-                  ),),
-
-                SizedBox(height: 20),
-
-                TextFormField(
-                  controller: senhaController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Senha",
-                    prefixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder()
-                  ),
-
-                  validator: (value){
-
-                    if(value == null || value.isEmpty){
-                      return "Digite uma senha";
-                    }
-
-                    if(value.length < 6){
-                      return "Senha deve ter no mínimo 6 caracteres";
-                    }
-
-                    return null;
-                  },
-                ),
-
-                SizedBox(height: 20),
-
-                TextFormField(
-                  controller: confirmarSenhaController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Confirmar Senha",
-                    prefixIcon: Icon(Icons.lock_outline),
-                    border: OutlineInputBorder()
-                  ),
-
-                  validator: (value){
-
-                    if(value != senhaController.text){
-                      return "As senhas não coincidem";
-                    }
-
-                    return null;
-                  },
-                ),
-
-                SizedBox(height: 40),
-
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-
-                  child: ElevatedButton(
-
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green
-                    ),
-
-                    onPressed: (){
-
-                      if(_formKey.currentState!.validate()){
-
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Usuário cadastrado com sucesso"))
-                        );
-
-                        Navigator.pop(context);
-                      }
-
-                    },
-
-                    child: Text(
-                      "Cadastrar",
-                      style: TextStyle(fontSize: 16)
-                    ),
-                  ),
-                )
-
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            TextField(
+              controller: nomeController,
+              decoration: const InputDecoration(
+                labelText: 'Nome',
+              ),
             ),
-          ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: emailController,
+              decoration: const InputDecoration(
+                labelText: 'Email',
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: senhaController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: 'Senha',
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: turmaController,
+              decoration: const InputDecoration(
+                labelText: 'Turma',
+              ),
+            ),
+            const SizedBox(height: 12),
+            DropdownButtonFormField<String>(
+              value: tipo,
+              items: const [
+                DropdownMenuItem(
+                  value: 'aluno',
+                  child: Text('Aluno'),
+                ),
+                DropdownMenuItem(
+                  value: 'professor',
+                  child: Text('Professor'),
+                ),
+                DropdownMenuItem(
+                  value: 'funcionario',
+                  child: Text('Funcionário'),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  tipo = value!;
+                });
+              },
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              height: 55,
+              child: ElevatedButton(
+                onPressed: loading ? null : registrar,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF4CAF50),
+                ),
+                child: loading
+                    ? const CircularProgressIndicator(
+                        color: Colors.white,
+                      )
+                    : const Text(
+                        'Cadastrar',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                      ),
+              ),
+            ),
+          ],
         ),
       ),
     );
