@@ -12,7 +12,12 @@
           "package_name": "com.example.app_ecotrack_3_a"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "300942605158-d3bd2dl9lggmf59u9r54p0k3m3cqtfjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB_iiBQl3npxI-1FoionH22UxJCj2H6h_M"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300942605158-d3bd2dl9lggmf59u9r54p0k3m3cqtfjp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "300942605158-qgi9ca0nvias97f145tu27o8fh4rrlpi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appEcotrack3a"
+              }
+            }
+          ]
         }
       }
     }

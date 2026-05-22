@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '300942605158',
     projectId: 'projetoecotrackba',
     storageBucket: 'projetoecotrackba.firebasestorage.app',
+    iosClientId: '300942605158-qgi9ca0nvias97f145tu27o8fh4rrlpi.apps.googleusercontent.com',
     iosBundleId: 'com.example.appEcotrack3a',
   );
 
@@ -72,6 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '300942605158',
     projectId: 'projetoecotrackba',
     storageBucket: 'projetoecotrackba.firebasestorage.app',
+    iosClientId: '300942605158-qgi9ca0nvias97f145tu27o8fh4rrlpi.apps.googleusercontent.com',
     iosBundleId: 'com.example.appEcotrack3a',
   );
 
